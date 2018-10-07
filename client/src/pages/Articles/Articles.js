@@ -77,7 +77,7 @@ class Articles extends Component {
         )
           .then((res) => {
             if (res.data.response.docs.length) {
-              for (let i = 0; i < 5; i++) {
+              for (let i = 0; i < 10; i++) {
                 this.setState({
                   results: this.state.results.concat(res.data.response.docs[i])
                 })
