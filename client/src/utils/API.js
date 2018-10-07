@@ -13,7 +13,7 @@ const api = {
 
     },
 
-    saveArticles: (articleData) => {
+    saveArticle: (articleData) => {
         return axios.post("/api/articles", articleData)
     },
 
