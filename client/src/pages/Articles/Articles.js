@@ -97,7 +97,7 @@ class Articles extends Component {
   
     };
 
-    saveArticle = index => {
+    saveArticle = (index) => {
         let { headline: title, web_url: url, pub_date: date } = this.state.results[index]
         this.setState({
           results: this.state.results.filter((_, i) => i !== index)
