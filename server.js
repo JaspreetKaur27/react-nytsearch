@@ -1,21 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const routes = require("./routes");
-var logger = require('morgan');
+const logger = require('morgan');
 const PORT = process.env.PORT || 3001;
 
 const db = require('./models');
 
 
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

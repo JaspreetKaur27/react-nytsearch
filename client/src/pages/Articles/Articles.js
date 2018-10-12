@@ -138,29 +138,6 @@ class Articles extends Component {
             <Column size="12" className="p-0">
             
               <Row>
-                {/* Check if there are any to save using ternary */}
-                <Column size="lg-6" className="p-0">
-                  <Card header="Saved" className="cardBr">
-                    {this.state.saved.length ? (
-                      <List>
-                        {this.state.saved.map((saved) => (
-                          <Listitem
-                            key={saved._id}
-                            url={saved.url}
-                            title={saved.title}
-                            savedDate={saved.savedDate}
-                            date={moment(saved.date, "YYYY-MM-DD").format("DD-MM-YYYY")}>
-                            <Button onClick={() => this.deleteArticle(saved._id)}>
-                              Delete
-                          </Button>
-                          </Listitem>
-                        ))}
-                      </List>
-                    ) : (
-                        <h3>Nothing Saved</h3>
-                      )}
-                  </Card>
-                </Column>
                 {/* Input Card for sending queries */}
                 <Column size="lg-6" className="p-0">
                   <Card header="Search">
@@ -201,6 +178,29 @@ class Articles extends Component {
                         Submit Search
                       </FormBtn>
                     </form>
+                  </Card>
+                </Column>
+                {/* Check if there are any to save using ternary */}
+                <Column size="lg-6" className="p-0">
+                  <Card header="Saved" className="cardBr">
+                    {this.state.saved.length ? (
+                      <List>
+                        {this.state.saved.map((saved) => (
+                          <Listitem
+                            key={saved._id}
+                            url={saved.url}
+                            title={saved.title}
+                            savedDate={saved.savedDate}
+                            date={moment(saved.date, "YYYY-MM-DD").format("DD-MM-YYYY")}>
+                            <Button onClick={() => this.deleteArticle(saved._id)}>
+                              Delete
+                          </Button>
+                          </Listitem>
+                        ))}
+                      </List>
+                    ) : (
+                        <h3>Nothing Saved</h3>
+                      )}
                   </Card>
                 </Column>
               </Row>
